@@ -13,5 +13,4 @@ public abstract record ValueObject
             throw new BussinessRuleValidationException(rule);
         }
     }
-
 }

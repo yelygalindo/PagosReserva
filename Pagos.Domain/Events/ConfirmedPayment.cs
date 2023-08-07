@@ -2,18 +2,16 @@
 
 namespace Pagos.Domain.Events
 {
-    public record TransaccionConfirmada : DomainEvent
+    public record ConfirmedPayment : DomainEvent
     {
-        public Guid TransaccionId { get; init; }
+        public Guid PaymentId { get; init; }
         public ICollection<DetalleTransaccionConfirmada> Detalle { get; init; }
-        public TransaccionConfirmada(Guid transaccionId, 
-            ICollection<DetalleTransaccionConfirmada> detalle) : base(DateTime.Now)
+        public ConfirmedPayment(Guid paymentId, ICollection<DetalleTransaccionConfirmada> detalle) : base(DateTime.Now)
         {
-            TransaccionId = transaccionId;
+            PaymentId = paymentId;
             Detalle = detalle;
         }
 
         public record DetalleTransaccionConfirmada(Guid ItemId, int Cantidad, decimal CostoUnitario);
-
     }
 }
