@@ -29,7 +29,7 @@ namespace Pagos.Domain.Repositories
                     resultPayment = _paymentProvider.ProcessPayment(paymentRequest);
                     break;
                 case TransactionType.Withdrawal:
-                    resultPayment = _paymentProvider.ProcessPayment(paymentRequest);
+                    resultPayment = _paymentProvider.ProcessRefund(paymentRequest);
                     break;
             }
             if (resultPayment is null) {

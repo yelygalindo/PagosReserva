@@ -1,7 +1,7 @@
 ﻿using Pagos.Domain.Entities;
 using Pagos.Domain.Model;
 
-namespace Pagos.Domain.Repositories
+namespace Infraestructure.Repositories
 {
     public class StripePaymentProvider : IPaymentProvider
     {

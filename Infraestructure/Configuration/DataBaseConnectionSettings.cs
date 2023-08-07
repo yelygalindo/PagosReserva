@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-namespace Infraestructure.Configuration
+﻿namespace Infraestructure.Configuration
 {
     public record DataBaseConnectionSettings
     {

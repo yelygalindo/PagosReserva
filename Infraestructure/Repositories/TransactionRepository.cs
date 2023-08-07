@@ -2,16 +2,15 @@
 using Pagos.Domain.Contract;
 using Pagos.Domain.Entities;
 
-namespace Pagos.Domain.Repositories
+namespace Infraestructure.Repositories
 {
     public class TransactionRepository: ITransaction
     {
         private readonly string _connectionString;
 
-        public TransactionRepository()
+        public TransactionRepository(string connectionString)
         {
-            _connectionString = "Server=localhost;Database=Pagos;User Id=usr2;Password=123456;Encrypt=true;TrustServerCertificate=true;";
-
+            _connectionString = connectionString;  
         }
 
         public async Task SavePaymentRecord(Transaction paymentRecord)
